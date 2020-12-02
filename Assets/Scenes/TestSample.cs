@@ -2,17 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestSample : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class TestSample : Singleton<TestSample> {
+	public GameObject testSample;
+	private void Start() {
+		TextureGenerator.GenerateTexture(testSample, new Vector2Int(64, 64), TextureGenerator.TexturePattern.random);
+	}
 }
